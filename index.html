@@ -1,78 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="https://i.ibb.co/ZqC6Lpf/Galaxy-Fiber-Logo-350x100pixels.png">
-  <title>GALAXY INVENTORY SYSTEM</title>
+  <link rel="icon" type="image/png" href="https://i.ibb.co/23jGdWLf/image.png">
   
-  <style>
-    /* Prevent scrollbars on the main page */
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: sans-serif;
-    }
-
-    /* Style for the "Start" overlay */
-    #start-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #f1f1f1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease; /* Adds a nice fade out */
-    }
-
-    /* Style for the Button */
-    .start-btn {
-      padding: 15px 30px;
-      font-size: 20px;
-      background-color: #0056b3;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    .start-btn:hover {
-      background-color: #004494;
-    }
-    
-    .logo-img {
-      max-width: 80%;
-      height: auto;
-      margin-bottom: 20px;
-    }
-
-    /* Iframe styling - covers the whole screen but stays in window */
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+  <title>GALAXY INVENTORY SYSTEM</title>
 </head>
 <body>
-
   <iframe 
-    id="app-frame"
-    src="https://script.google.com/macros/s/AKfycbxkVEXMifkmjaQk8abLldWmvNgf6xgD1U7vd89UdQwhA_1LzesNeeWsi0sntwtzFW5D/exec">
+    src="https://script.google.com/macros/s/AKfycbxkVEXMifkmjaQk8abLldWmvNgf6xgD1U7vd89UdQwhA_1LzesNeeWsi0sntwtzFW5D/exec"
+    width="100%"
+    height="100%"
+    allowfullscreen="true"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none;">
   </iframe>
 
+  <script>
+    window.onload = function() {
+      document.querySelector('iframe')
+        .requestFullscreen()
+        .catch((err) => {
+          console.error('Error attempting to enable full-screen mode:', err.message);
+        });
+    };
+  </script>
 </body>
 </html>
