@@ -1,37 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="https://i.ibb.co/23jGdWLf/image.png">
+  <link rel="icon" type="image/png" href="https://i.ibb.co/ZqC6Lpf/Galaxy-Fiber-Logo-350x100pixels.png">
+  
   <title>GALAXY INVENTORY SYSTEM</title>
-  <style>
-    /* Remove all margins and scrollbars from the main browser window */
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      background-color: #ffffff;
-    }
-
-    /* Make the iframe fill the entire viewable area */
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
 </head>
 <body>
-
   <iframe 
-    src="https://script.google.com/macros/s/AKfycbxkVEXMifkmjaQk8abLldWmvNgf6xgD1U7vd89UdQwhA_1LzesNeeWsi0sntwtzFW5D/exec">
+    src="https://script.google.com/macros/s/AKfycbxkVEXMifkmjaQk8abLldWmvNgf6xgD1U7vd89UdQwhA_1LzesNeeWsi0sntwtzFW5D/exec"
+    width="100%"
+    height="100%"
+    allowfullscreen="true"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none;">
   </iframe>
 
+  <script>
+    window.onload = function() {
+      document.querySelector('iframe')
+        .requestFullscreen()
+        .catch((err) => {
+          console.error('Error attempting to enable full-screen mode:', err.message);
+        });
+    };
+  </script>
 </body>
 </html>
